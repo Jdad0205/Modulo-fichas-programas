@@ -1,4 +1,4 @@
-<h1>Editar fichas</h1>
+<h1>Editar fichas.</h1>
 <form action="{{ route('fichas.update', $ficha->id_ficha) }}" method="POST">
     @csrf
     @method('PUT')
