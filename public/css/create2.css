@@ -18,9 +18,8 @@ h1{
 
 .container {
     width: fit-content;
-    margin: 0 auto;
     background-color: #fff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -29,6 +28,10 @@ h1{
     align-items: center;
 }
 
+form{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 .form-group {
     margin-bottom: 15px;
 }
@@ -36,7 +39,7 @@ h1{
 
 .form-control {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
@@ -45,8 +48,10 @@ h1{
 
 .form-group label {
     font-weight: bold;
-    margin-bottom: 5px;
     color: #555;
+}
+div select{
+    width: fit-content;
 }
 
 .form-control:focus {
@@ -66,7 +71,6 @@ select.form-control {
     -moz-appearance: none;
     appearance: none;
     background-color: #fff;
-    width: 11rem;
 }
 
 .btn {

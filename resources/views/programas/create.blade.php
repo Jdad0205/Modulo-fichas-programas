@@ -21,7 +21,6 @@
                 </ul>
             </div>
             @endif
-
             <!-- Formulario de creación de programas -->
             <form action="{{ route('programas.store') }}" method="POST">
                 @csrf
@@ -57,8 +56,9 @@
 
                 <div class="form-group">
                     <label for="red_conocimiento">Red de Conocimiento:</label>
+                    <br>
                     <select name="red_conocimiento" id="red_conocimiento" class="form-control">
-                        <option value="1" {{ old('red_conocimiento') == '0' ? 'selected' : '' }}>Selecione</option>
+                        <option value="0" {{ old('red_conocimiento') == '0' ? 'selected' : '' }}>Selecione</option>
                         <option value="1" {{ old('red_conocimiento') == '1' ? 'selected' : '' }}>Red de Tecnología</option>
                         <option value="2" {{ old('red_conocimiento') == '2' ? 'selected' : '' }}>Red de Ciencias</option>
                     </select>

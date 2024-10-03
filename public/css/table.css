@@ -1,8 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff; 
     margin: 0;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 a {
@@ -10,23 +11,31 @@ a {
 }
 
 h1 {
-    color: #333; /* Un tono gris oscuro para mejor contraste */
-    font-family: 'Arial', sans-serif;
+    color: #333; 
     text-align: center;
 }
 
 .table {
     background-color: #fff; 
     border-radius: 8px; 
-    overflow: hidden; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
-    margin: 20px 0; /* Espaciado superior e inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 20px 0; 
 }
+.table, button{
+    font-size: 15px;
+}
+
+.Create-pro{
+    background: green;
+    color: white;
+    border-radius: 0.2rem;
+}
+
 
 .table th, .table td {
     text-align: center; 
     padding: 12px; 
-    color: #333; /* Color del texto más oscuro para legibilidad */
+    color: #333; 
 }
 
 .table th {
@@ -37,20 +46,20 @@ h1 {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f8f9fa; /* Color de fondo más claro para filas impares */
+    background-color: #f8f9fa; 
 }
 
 .table-hover tbody tr:hover {
-    background-color: #e2e6ea; /* Color de fondo más claro en hover */
+    background-color: #e2e6ea; 
 }
 
 .btn {
     margin-right: 5px; 
-    transition: background-color 0.3s ease, transform 0.2s; /* Añadido efecto de transformación */
+    transition: background-color 0.3s ease, transform 0.2s; 
 }
 
 .btn:hover {
-    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+    transform: scale(1.05); 
 }
 
 .btn-primary {

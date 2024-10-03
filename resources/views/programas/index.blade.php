@@ -1,12 +1,13 @@
     <link rel="stylesheet" href="{{ asset('css/table.css') }}">
+    
     <div class="container mt-4">
         <h1 class="mb-4 text-center">Programas</h1>
 
-        <a href="{{ route('programas.create') }}" class="btn btn-primary mb-3">Crear Programa</a>
+        <a href="{{ route('programas.create') }}" class="Create-pro">Crear Programa</a>
 
 
-        <table class="table table-striped table-bordered table-hover">
-            <thead class="thead-dark">
+        <table class="table table-bordered table-hover">
+            <thead class="">
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
