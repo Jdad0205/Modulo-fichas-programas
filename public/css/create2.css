@@ -50,9 +50,6 @@ form{
     font-weight: bold;
     color: #555;
 }
-div select{
-    width: fit-content;
-}
 
 .form-control:focus {
     border-color: #007bff;

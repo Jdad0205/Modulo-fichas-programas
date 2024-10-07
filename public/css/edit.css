@@ -10,6 +10,10 @@ body {
     background-color: #f4f4f9;
 }
 
+.ancho-btn{
+    width:100%;
+}
+
 h1{
     color: green;
     text-align: center;
