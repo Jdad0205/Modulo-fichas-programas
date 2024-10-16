@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('contenido')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,13 +66,10 @@
                 <label for="fecha_fin">Fecha de Fin:</label>
                 <input type="date" name="fecha_fin" id="fecha_fin" class="form-control" value="{{ old('fecha_fin') }}">
             </div>
-            <div class="form-group">
-                <label for="fecha_creacion">Fecha de Creación:</label>
-                <input type="date" name="fecha_creacion" id="fecha_creacion" class="form-control" value="{{ old('fecha_creacion') }}">
-            </div>
+            <button type="submit" class="btn btn-primary">Crear Ficha</button>
         </form>
         </div>
-        <button type="submit" class="btn btn-primary">Crear Ficha</button>
         </div>
 </body>
 </html>
+@endsection

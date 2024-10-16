@@ -1,8 +1,10 @@
+@extends('layouts.app')
+@section('contenido')
 <link rel="stylesheet" href="{{ asset('css/table.css') }}">
 <div class="container mt-4">
     <h1 class="mb-4 text-center">Fichas</h1>
 
-    <a href="{{ route('fichas.create') }}" class="btn btn-primary mb-3">Crear Ficha</a>
+    <a href="{{ route('fichas.create') }}" class="Create-pro">Crear Ficha</a>
 
     <table class="table table-striped table-bordered table-hover">
         <thead class="thead-dark">
@@ -45,3 +47,4 @@
         </tbody>
     </table>
 </div>
+@endsection

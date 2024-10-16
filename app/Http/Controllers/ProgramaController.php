@@ -32,7 +32,6 @@ class programaController extends Controller
         $request->validate([
             'nombre'=> 'required',
             'version'=> 'required',
-            'fecha_creacion'=> 'required',
             'red_conocimiento'=> 'required',
             'duracion_meses'=> 'required',
             'requisitos_ingreso'=> 'required',
@@ -68,7 +67,6 @@ class programaController extends Controller
         $request->validate([
             'nombre',
             'version',
-            'fecha_creacion',
             'red_conocimiento',
             'duracion_meses',
             'requisitos_ingreso',

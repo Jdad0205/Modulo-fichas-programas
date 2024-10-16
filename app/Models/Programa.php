@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Programa extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre', 'version', 'fecha_creacion',  'red_conocimiento', 'duracion_meses', 'requisitos_ingreso', 'requisitos_formacion'];
+    protected $fillable = ['nombre', 'version',  'red_conocimiento', 'duracion_meses', 'requisitos_ingreso', 'requisitos_formacion'];
 }
 //aqui van los campos de mi tabla

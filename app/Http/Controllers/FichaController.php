@@ -37,8 +37,7 @@ class FichaController extends Controller
             'hora_salida' => 'required',
             'jornada' => 'required',
             'fecha_inicio' => 'required',
-            'fecha_fin' => 'required',
-            'fecha_creacion' => 'required'
+            'fecha_fin' => 'required'
         ]);
 
         Ficha::create($request->all());
@@ -76,8 +75,7 @@ class FichaController extends Controller
             'hora_salida' => 'required',
             'jornada' => 'required',
             'fecha_inicio' => 'required',
-            'fecha_fin' => 'required',
-            'fecha_creacion' => 'required'
+            'fecha_fin' => 'required'
         ]);
 
         $ficha = Ficha::findOrFail($id_ficha);

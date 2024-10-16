@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('contenido')
 <link rel="stylesheet" href="{{ asset('css/edit.css') }}">
 <div class="container">
     <h1>Crear Nuevo Programa</h1>
@@ -27,11 +29,6 @@
         </div>
 
         <div class="form-group">
-            <label for="fecha_creacion">Fecha de Creación:</label>
-            <input type="date" name="fecha_creacion" id="fecha_creacion" class="form-control" value="{{ old('fecha_creacion') }}">
-        </div>
-
-        <div class="form-group">
             <label for="duracion_meses">Duración (meses):</label>
             <input type="number" name="duracion_meses" id="duracion_meses" class="form-control" value="{{ old('duracion_meses') }}">
         </div>
@@ -57,3 +54,4 @@
         <button type="submit" class="btn btn-primary">Crear Programa</button>
     </form>
 </div>
+@endsection

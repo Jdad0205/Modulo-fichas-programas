@@ -1,4 +1,6 @@
-    <link rel="stylesheet" href="{{ asset('css/table.css') }}">
+@extends('layouts.app')
+@section('contenido')
+<link rel="stylesheet" href="{{ asset('css/table.css') }}">
     
     <div class="container mt-4">
         <h1 class="mb-4 text-center">Programas</h1>
@@ -46,3 +48,4 @@
             </tbody>
         </table>
     </div>
+@endsection
