@@ -1,16 +1,14 @@
 @extends('layouts.app')
+@section('titulo','Fichas')
 @section('contenido')
-<link rel="stylesheet" href="{{ asset('css/table.css') }}">
-<div class="container mt-4">
-    <h1 class="mb-4 text-center">Fichas</h1>
-
+<div class=" mt-4">
     <a href="{{ route('fichas.create') }}" class="Create-pro">Crear Ficha</a>
 
     <table class="table table-striped table-bordered table-hover">
         <thead class="thead-dark">
             <tr>
                 <th>ID Ficha</th>
-                <th>ID Programa de Formación</th>
+                <th>Programa de Formación</th>
                 <th>Nombre</th>
                 <th>Hora de Entrada</th>
                 <th>Hora de Salida</th>
@@ -25,21 +23,21 @@
             @foreach ($fichas as $ficha)
             <tr>
                 <td>{{ $ficha->id_ficha }}</td>
-                <td>{{ $ficha->id_programa_formacion }}</td>
+                <td>{{ $ficha->namePrograma }}</td>
                 <td>{{ $ficha->nombre }}</td>
                 <td>{{ $ficha->hora_entrada }}</td>
                 <td>{{ $ficha->hora_salida }}</td>
                 <td>{{ $ficha->jornada }}</td>
                 <td>{{ $ficha->fecha_inicio }}</td>
                 <td>{{ $ficha->fecha_fin }}</td>
-                <td>{{ $ficha->fecha_creacion }}</td>
+                <td>{{ $ficha->created_at}}</td>
                 <td>
-                    <a href="{{ route('fichas.edit', $ficha->id_ficha) }}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{{ route('fichas.edit', $ficha->id_ficha) }}" class="btn btn-warning "><i class="bi bi-pencil"></i></a>
 
                     <form action="{{ route('fichas.destroy', $ficha->id_ficha) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar esta ficha?')">Eliminar</button>
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta ficha?')"><i class="bi bi-x-circle"></i></button>
                     </form>
                 </td>
             </tr>

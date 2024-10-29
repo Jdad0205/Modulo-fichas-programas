@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\programa;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class programaController extends Controller
@@ -15,12 +15,18 @@ class programaController extends Controller
         $programas = programa::All();
         return view('programas.index', compact('programas'));
     }
-
+    
+    public function pdf(){
+        $programas=programa::all();
+        $pdf = Pdf::loadView('programas.pdf',compact('programas'));
+        return $pdf->stream();
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
+        
         return view('programas.create');
     }
 

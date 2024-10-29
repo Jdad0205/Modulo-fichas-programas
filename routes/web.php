@@ -6,17 +6,9 @@ use App\Http\Controllers\FichaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
+//pdf
+Route::get('programas/pdf', [ProgramaController::class, 'pdf'])->name('programas.pdf');
 
 
 // Login
@@ -30,6 +22,14 @@ Route::post('/register', [AuthController::class, 'store'])->name('auth.store');
 // Logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::get('/', [AuthController::class, 'index']);
+
+//welcome 
+Route::get('/welcome', function() {
+    return view('welcome');
+})->name('welcome');
+
+
+
 
 //programa
 Route::get('/programas', [ProgramaController::class, 'index'])->name('programas.index'); // Mostrar lista de programas

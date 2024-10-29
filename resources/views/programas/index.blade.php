@@ -1,9 +1,9 @@
 @extends('layouts.app')
+@section('titulo','Programas')
 @section('contenido')
-<link rel="stylesheet" href="{{ asset('css/table.css') }}">
+
     
-    <div class="container mt-4">
-        <h1 class="mb-4 text-center">Programas</h1>
+    <div class=" mt-4">
 
         <a href="{{ route('programas.create') }}" class="Create-pro">Crear Programa</a>
 
@@ -28,19 +28,19 @@
                     <td>{{ $programa->id }}</td>
                     <td>{{ $programa->nombre }}</td>
                     <td>{{ $programa->version }}</td>
-                    <td>{{ $programa->fecha_creacion }}</td>
+                    <td>{{ $programa->created_at}}</td>
                     <td>{{ $programa->red_conocimiento }}</td>
                     <td>{{ $programa->duracion_meses }}</td>
                     <td>{{ $programa->requisitos_ingreso }}</td>
                     <td>{{ $programa->requisitos_formacion }}</td>
                     <td>
-                        <a href="{{ route('programas.edit', $programa->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="{{ route('programas.edit', $programa->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
 
                         
                         <form action="{{ route('programas.destroy', $programa->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este programa?')">Eliminar</button>
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este programa?')"><i class="bi bi-x-circle"></i></button>
                         </form>
                     </td>
                 </tr>

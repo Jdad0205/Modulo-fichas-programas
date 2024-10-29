@@ -3,14 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <link href="{{ asset('/css/signin.css') }}" rel="stylesheet">
   </head>
 <body >
 <div class="container">
     <main class="form-signin">
-  <form action="{{ route('auth.authenticate') }}" method="POST">
+  <form action="{{ route('programas.index') }}" method="get">
       @csrf
-    <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+    <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
     <div class="form-floating">
     <label for="email">Email address</label>

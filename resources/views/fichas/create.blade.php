@@ -1,17 +1,15 @@
 @extends('layouts.app')
+@section('titulo','Crear ficha')
 @section('contenido')
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/create.css') }}">
-    <title>Crear Nueva Ficha</title>
 </head>
 <body>
     <div class="contedor-principal">
     <div class="container">
-        <h1>Crear Nueva Ficha</h1>
         <!-- Muestra errores de validación si existen -->
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -32,8 +30,13 @@
                 <input type="text" name="id_ficha" id="id_ficha" class="form-control" value="{{ old('id_ficha') }}">
             </div>
             <div class="form-group">
-                <label for="id_programa_formacion">Código de Programa de Formación:</label>
-                <input type="text" name="id_programa_formacion" id="id_programa_formacion" class="form-control" value="{{ old('id_programa_formacion') }}">
+                <label for="id_programa_formacion">Programa de Formación:</label>
+                <select name="id_programa_formacion" id="id_programa_formacion" class="form-control">
+                    <option value="">Selecione un programa de formacion</option>
+                    @foreach($Programas as $Programa)
+                    <option value="{{$Programa->id}}">{{$Programa->nombre}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label for="nombre">Nombre:</label>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Ficha;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class FichaController extends Controller
@@ -12,7 +12,17 @@ class FichaController extends Controller
      */
     public function index()
     {
-        $fichas = Ficha::all();
+        $fichas = DB::table('fichas')
+        ->join(
+        'programas',
+        'fichas.id_programa_formacion',
+        '=',
+        'programas.id')
+        ->select(
+        'fichas.*',
+        'programas.nombre AS namePrograma'
+        )
+        ->get();
         return view('fichas.index', compact('fichas'));
     }
 
@@ -21,7 +31,13 @@ class FichaController extends Controller
      */
     public function create()
     {
-        return view('fichas.create');
+        $Programas=DB::table('programas')
+        ->select('programas.*')
+        ->get();
+        return view('fichas.create',
+        compact('Programas')
+    );
+
     }
 
     /**

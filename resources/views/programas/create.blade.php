@@ -1,9 +1,7 @@
 @extends('layouts.app')
+@section('titulo','Crear programa')
 @section('contenido')
-<link rel="stylesheet" href="{{ asset('css/edit.css') }}">
 <div class="container">
-    <h1>Crear Nuevo Programa</h1>
-
     <!-- Muestra errores de validación si existen -->
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -47,6 +45,7 @@
             <label for="red_conocimiento">Red de Conocimiento:</label>
             <br>
             <select name="red_conocimiento" id="red_conocimiento" class="ancho-btn">
+                <option value="0" {{ old('red_conocimiento') == '0' ? 'selected' : '' }}>Seleccione</option>
                 <option value="1" {{ old('red_conocimiento') == '1' ? 'selected' : '' }}>Red de Tecnología</option>
                 <option value="2" {{ old('red_conocimiento') == '2' ? 'selected' : '' }}>Red de Ciencias</option>
             </select>
