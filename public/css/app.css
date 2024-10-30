@@ -1,3 +1,4 @@
+/* General reset and box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -6,111 +7,113 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    display: inline-flex;
     font-size: 25px;
+    display: flex;
 }
 
-.logo{
-    font-size:3rem !important;
-    text-wrap: nowrap;
-}
-
+/* Navbar styling */
 .navbar {
-    height: 80px;
-    margin-left: 200px;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 200px;
     width: calc(100vw - 200px);
+    height: 80px;
     background-color: #39A900;
     color: white;
-    padding: 1rem;
     display: flex;
     align-items: center;
-    text-align: center;
+    padding: 0 1rem;
+    justify-content: space-between;
 }
 
-.navbar .logo {
+.logo {
     font-size: 1.5rem;
+    white-space: nowrap;
 }
 
-.navbar .nav-links {
-    list-style: none;
-    display: flex;
+.logout-form {
+    margin-left: auto;
 }
 
-.navbar .nav-links li {
-    margin-left: 20px;
-}
-
-.navbar .nav-links li a {
+.btn-cerrar {
+    background-color: red;
     color: white;
-    text-decoration: none;
-    padding: 10px 15px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
 }
 
-.navbar .nav-links li a:hover {
-    background-color: green;
-    border-radius: 5px;
-}
-
-.sidebar img{
-    width: 100px;
-    margin-bottom: 50px;
-    margin-left: 30px;
-}
-
+/* Sidebar styling */
 .sidebar {
-    top: 0;
     position: fixed;
+    top: 0;
     left: 0;
     width: 200px;
-    height: 100vw; 
+    height: 100vh;
     background-color: #39A900;
-    padding-top: 20px;
-    border-right:1px solid white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 20px;
+    border-right: 1px solid white;
 }
 
-.sidebar ul {
+.sidebar-logo {
+    width: 80px;
+    margin-bottom: 40px;
+}
+
+.sidebar-menu {
     list-style: none;
-    padding-left: 0;
+    width: 100%;
+    text-align: center;
 }
 
-.sidebar ul li {
+.sidebar-menu li {
     margin-bottom: 20px;
 }
 
-.sidebar ul li a {
+.sidebar-menu li a {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
     display: block;
+    transition: background-color 0.3s;
 }
 
-.sidebar ul li a:hover {
+
+.sidebar-menu li a:hover {
     background-color: green;
     border-radius: 5px;
 }
 
-
-.main-content {
-    width: calc(100vw - 200px);
-    margin-left: 200px;
-    padding: 80px 20px; 
-    background-color: #ecf0f1;
-    height: calc(100vh);
+.sidebar-menu li a.active {
+    background-color: rgb(0, 66, 0);
+    border-radius: 5px;
 }
 
-.btn-cerrar{
-    background: red;
-    color: white;
-    height: 30px;
-    width: 100px;
-    border-radius: 0.5rem;
+
+/* Main content styling */
+.main-content {
+    margin-left: 200px;
+    padding: 80px 20px;
+    background-color: #ecf0f1;
+    width: calc(100vw - 200px);
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+
+.btn-primary {
+    background-color: green;
+    padding: 12px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
     cursor: pointer;
-    border: none;
-    margin-left: 65vw;
+
 }

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Ficha;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 use Illuminate\Http\Request;
+
 
 class FichaController extends Controller
 {
@@ -107,5 +110,28 @@ class FichaController extends Controller
         $ficha = Ficha::findOrFail($id_ficha);
         $ficha->delete();
         return redirect()->route('fichas.index')->with('success', 'Ficha eliminada exitosamente.');
+    }
+
+    public function generarPDF()
+    {
+        $fichas = DB::table('fichas')
+        ->join(
+        'programas',
+        'fichas.id_programa_formacion',
+        '=',
+        'programas.id')
+        ->select(
+        'fichas.*',
+        'programas.nombre AS namePrograma'
+        )
+        ->get();
+
+       // Generar el PDF con los datos y la vista 'pdf.ambientes'
+$pdf = PDF::loadView('fichas.pdf', compact('fichas'));
+
+// Retorna el PDF para que el navegador lo descargue o visualice
+return $pdf->stream('fichas.pdf'); // Para mostrar en navegador
+// return $pdf->download('ambientes.pdf'); // Para descargar directamente
+
     }
 }

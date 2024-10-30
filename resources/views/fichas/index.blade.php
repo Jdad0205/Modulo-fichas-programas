@@ -1,9 +1,11 @@
 @extends('layouts.app')
-@section('titulo','Fichas')
+@section('titulo', 'Fichas')
 @section('contenido')
-<div class=" mt-4">
-    <a href="{{ route('fichas.create') }}" class="Create-pro">Crear Ficha</a>
 
+<div class="mt-4">
+<a href="{{ route('fichas.pdf') }}" class="btn boton-crear btn-success" target="_blank">PDF</a>
+
+    <a href="{{ route('fichas.create') }}" class="btn btn-primary mb-3">Crear Ficha</a>
     <table class="table table-striped table-bordered table-hover">
         <thead class="thead-dark">
             <tr>
@@ -30,14 +32,17 @@
                 <td>{{ $ficha->jornada }}</td>
                 <td>{{ $ficha->fecha_inicio }}</td>
                 <td>{{ $ficha->fecha_fin }}</td>
-                <td>{{ $ficha->created_at}}</td>
+                <td>{{ $ficha->created_at }}</td>
                 <td>
-                    <a href="{{ route('fichas.edit', $ficha->id_ficha) }}" class="btn btn-warning "><i class="bi bi-pencil"></i></a>
-
+                    <a href="{{ route('fichas.edit', $ficha->id_ficha) }}" class="btn btn-warning btn-sm">
+                        <i class="bi bi-pencil"></i>
+                    </a>
                     <form action="{{ route('fichas.destroy', $ficha->id_ficha) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta ficha?')"><i class="bi bi-x-circle"></i></button>
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar esta ficha?')">
+                            <i class="bi bi-x-circle"></i>
+                        </button>
                     </form>
                 </td>
             </tr>

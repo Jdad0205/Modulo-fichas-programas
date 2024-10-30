@@ -41,6 +41,7 @@ Route::put('/programas/{id}', [ProgramaController::class, 'update'])->name('prog
 Route::delete('/programas/{id}', [ProgramaController::class, 'destroy'])->name('programas.destroy'); // Eliminar programa
 
 //ficha
+Route::get('/fichas/pdf', [FichaController::class, 'generarPDF'])->name('fichas.pdf'); // Asegúrate de que esta línea esté aquí.
 Route::get('/fichas', [FichaController::class, 'index'])->name('fichas.index'); // Mostrar lista de fichas
 Route::get('/fichas/create', [FichaController::class, 'create'])->name('fichas.create'); // Formulario de creación
 Route::post('/fichas', [FichaController::class, 'store'])->name('fichas.store'); // Guardar nueva ficha
