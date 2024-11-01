@@ -32,6 +32,7 @@ Route::get('/welcome', function() {
 
 
 //programa
+Route::get('/programas/pdf', [programaController::class, 'generarPDF'])->name('programas.pdf');
 Route::get('/programas', [ProgramaController::class, 'index'])->name('programas.index'); // Mostrar lista de programas
 Route::get('/programas/create', [ProgramaController::class, 'create'])->name('programas.create'); // Formulario de creación
 Route::post('/programas', [ProgramaController::class, 'store'])->name('programas.store'); // Guardar nuevo programa

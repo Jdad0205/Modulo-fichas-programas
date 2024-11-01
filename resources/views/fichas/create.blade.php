@@ -15,7 +15,7 @@
  
                 <div class="form-group">
                     <label for="id_ficha">Código de Ficha:</label>
-                    <input type="text" name="id_ficha" id="id_ficha" class="form-control" value="{{ old('id_ficha') }}">
+                    <input type="number" name="id_ficha" id="id_ficha" class="form-control" value="{{ old('id_ficha') }}">
                 </div>
                 <div class="form-group">
                     <label for="id_programa_formacion">Programa de Formación:</label>
@@ -43,10 +43,10 @@
                 <div class="form-group">
                     <label for="jornada">Jornada:</label>
                     <select name="jornada" id="jornada" class="form-control">
-                        <option value="" {{ old('jornada') == '' ? 'selected' : '' }}>Seleccione</option>
-                        <option value="1" {{ old('jornada') == '1' ? 'selected' : '' }}>Mañana</option>
-                        <option value="2" {{ old('jornada') == '2' ? 'selected' : '' }}>Tarde</option>
-                        <option value="3" {{ old('jornada') == '3' ? 'selected' : '' }}>Noche</option>
+                        <option value="">Seleccione</option>
+                        @foreach ($jornadas as $jornada)
+                        <option value="{{$jornada->id}}">{{$jornada->nombre}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">

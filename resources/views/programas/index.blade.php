@@ -2,6 +2,7 @@
 @section('titulo', 'Programas')
 @section('contenido')
 <div class="mt-4">
+    <a href="{{ route('programas.pdf') }}" class="btn boton-crear btn-success" target="_blank">PDF</a>
     <a href="{{ route('programas.create') }}" class="btn btn-primary mb-3">Crear Programa</a>
     <table class="table table-bordered table-hover">
         <thead>
@@ -24,7 +25,7 @@
                 <td>{{ $programa->nombre }}</td>
                 <td>{{ $programa->version }}</td>
                 <td>{{ $programa->created_at }}</td>
-                <td>{{ $programa->red_conocimiento }}</td>
+                <td>{{ $programa->nombreRed}}</td>
                 <td>{{ $programa->duracion_meses }}</td>
                 <td>{{ $programa->requisitos_ingreso }}</td>
                 <td>{{ $programa->requisitos_formacion }}</td>

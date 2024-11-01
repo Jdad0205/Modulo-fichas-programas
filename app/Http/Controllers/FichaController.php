@@ -7,6 +7,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 use Illuminate\Http\Request;
 
+use function Laravel\Prompts\select;
 
 class FichaController extends Controller
 {
@@ -21,9 +22,16 @@ class FichaController extends Controller
         'fichas.id_programa_formacion',
         '=',
         'programas.id')
+        ->join(
+        'jornada',
+        'jornada',
+        '=',
+        'jornada.id'
+        )
         ->select(
         'fichas.*',
-        'programas.nombre AS namePrograma'
+        'programas.nombre AS namePrograma',
+        'fichas.nombre As nombreFicha'
         )
         ->get();
         return view('fichas.index', compact('fichas'));
@@ -37,8 +45,9 @@ class FichaController extends Controller
         $Programas=DB::table('programas')
         ->select('programas.*')
         ->get();
+        $jornadas = DB::table('jornada')->select('jornada.*')->get();
         return view('fichas.create',
-        compact('Programas')
+        compact('Programas', 'jornadas')
     );
 
     }
@@ -120,12 +129,18 @@ class FichaController extends Controller
         'fichas.id_programa_formacion',
         '=',
         'programas.id')
+        ->join(
+        'jornada',
+        'jornada',
+        '=',
+        'jornada.id'
+        )
         ->select(
         'fichas.*',
-        'programas.nombre AS namePrograma'
+        'programas.nombre AS namePrograma',
+        'jornada.nombre As nombreJornada'
         )
         ->get();
-
        // Generar el PDF con los datos y la vista 'pdf.ambientes'
 $pdf = PDF::loadView('fichas.pdf', compact('fichas'));
 

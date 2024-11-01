@@ -65,7 +65,7 @@
                 <td>{{ $ficha->nombre }}</td>
                 <td>{{ $ficha->hora_entrada }}</td>
                 <td>{{ $ficha->hora_salida }}</td>
-                <td>{{ $ficha->jornada }}</td>
+                <td>{{ $ficha->nombreJornada }}</td>
                 <td>{{ $ficha->fecha_inicio }}</td>
                 <td>{{ $ficha->fecha_fin }}</td>
                 <td>{{ $ficha->created_at }}</td>
